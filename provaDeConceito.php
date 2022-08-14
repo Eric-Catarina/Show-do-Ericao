@@ -1,6 +1,6 @@
 <?php
-$perguntasJson = file_get_contents("perguntas.json");
-$conteudoPerguntasJson = json_decode($perguntasJson);
+//$perguntasJson = file_get_contents("perguntas.json");
+//$conteudoPerguntasJson = json_decode($perguntasJson);
 
 $vetorEnunciados = 
 ["Qual bicho transmite Doença de Chagas ?",
@@ -40,7 +40,6 @@ array(
 "Vênia",
 "Veia"));
 
-//$vetorIndiceAlternativas = array(0,1,2,3);
 
 $vetorAlternativasCorretas = array(3,1,0,2,3);
 /*
@@ -57,26 +56,26 @@ for($contadorI = 0; $contadorI < 3; $contadorI ++){
     }
 };
 */
-function printaVetor($vetorAlvo, $id){
-    for ($i = 0; $i <4; $i++){
-        
+function GeraButoesDasAlternativas($vetorDasAlternativas, $id){
+    for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual <4; $indiceAlternativaAtual++){
         echo "<button>";
-        echo ($vetorAlvo[$id][$i]);
+        echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
+        echo "</button>";
         echo "<br>";
     }
 }
-function carregaPerguntaPeloId($id){
+function carregaPerguntaPeloId(){
     $id = $_GET["id"];
     global $vetorEnunciados;
     global $vetorAlternativas;
     echo ($vetorEnunciados[$id]);
     echo "<br>";
     echo "<br>";
-    printaVetor($vetorAlternativas, $id);
+    GeraButoesDasAlternativas($vetorAlternativas, $id);
 }
-carregaPerguntaPeloId($id);
+carregaPerguntaPeloId();
 
-echo $conteudoPerguntasJson->enunciado1;
+//echo $conteudoPerguntasJson->enunciado1;
 
 ?>
 

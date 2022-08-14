@@ -12,7 +12,7 @@
     },
     {
         "enunciado2": "bla bla bla",
-        "alternativas": ["alt1", "alt2", "alt3", ],
+        "alternativas": ["alt1", "alt2", "alt3"],
         "resposta": 1
     }
     
