@@ -1,4 +1,7 @@
 <?php
-$respostaRadio = $_POST["respostaRadio"];
-echo ($respostaRadio);
+include "questoes.php";
+echo "$vetorEnunciados[0]";
+
+
+
 ?>
