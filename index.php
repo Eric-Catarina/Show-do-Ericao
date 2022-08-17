@@ -13,6 +13,10 @@ function TestaSeAcertou(){
     if($alternativaClicada == $vetorAlternativasCorretas[$idMenosUm]){
         echo ($alternativaClicada);
     }
+    else{
+        header("Location: faliu.html");
+
+    }
 
 }
 
