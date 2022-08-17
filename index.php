@@ -46,7 +46,14 @@ $id = $_POST["id"];
         echo "<br>";
         echo "<br>";
     }
+    function GeraPerguntasRespondidas($id){
+        echo "<h3> Perguntas respondidas:"  .$id. "</h3>"; 
+        echo "<br>";
+        echo "<br>";
+    }
+
     GeraTituloPergunta($id);
+    GeraPerguntasRespondidas($id);
     GeraButoesDasAlternativas($vetorAlternativas, $id);
 
     ?>
