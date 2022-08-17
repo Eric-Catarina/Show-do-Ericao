@@ -1,7 +1,27 @@
 <?php
 include "questoes.php";
+date_default_timezone_set('America/Sao_Paulo');
 
 $id = $_POST["id"];
+
+if($id == 0){
+    $login = $_POST["login"];
+    setcookie("login", $login);
+}
+if($id != 0){
+    $login = $_COOKIE['login'];
+}
+
+
+$date = date('Y-m-d H:i:s');
+
+
+echo 'Now:       '. $login ."\n";
+if ($id == 5){
+    header("Location: ganhou.html");
+
+}
+
 echo "<h3> ID:"  .$id. "</h3>"; 
 $alternativaClicada = $_POST["radioResposta"];
 
@@ -20,7 +40,7 @@ function TestaSeAcertou(){
 
 }
 
-if (!($alternativaClicada == -1)){
+if (!($alternativaClicada == -1)){ //Testa se é a primeira página
     TestaSeAcertou();
 }
 
