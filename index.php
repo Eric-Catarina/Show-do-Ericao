@@ -7,16 +7,22 @@ $id = $_POST["id"];
 if($id == 0){
     $login = $_POST["login"];
     setcookie("login", $login);
+    $date = date('Y-m-d H:i:s');
+    setcookie("date", $date);
+
+
 }
 if($id != 0){
     $login = $_COOKIE['login'];
+    $date = $_COOKIE['date'];
 }
 
 
-$date = date('Y-m-d H:i:s');
 
 
-echo 'Now:       '. $login ."\n";
+echo 'Login: '. $login ."<br>";
+echo 'Última Vez Jogada:   '. $date ."\n";
+
 if ($id == 5){
     header("Location: ganhou.html");
 
