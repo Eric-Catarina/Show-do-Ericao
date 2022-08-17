@@ -2,6 +2,23 @@
 include "questoes.php";
 
 $id = $_POST["id"];
+echo "<h3> ID:"  .$id. "</h3>"; 
+$alternativaClicada = $_POST["radioResposta"];
+
+function TestaSeAcertou(){
+    global $id; 
+    global $alternativaClicada;
+    global $vetorAlternativasCorretas;
+    $idMenosUm = $id-1;
+    if($alternativaClicada == $vetorAlternativasCorretas[$idMenosUm]){
+        echo ($alternativaClicada);
+    }
+
+}
+
+if (!($alternativaClicada == -1)){
+    TestaSeAcertou();
+}
 
 ?>
 <!DOCTYPE html>
@@ -29,12 +46,14 @@ $id = $_POST["id"];
 
         echo '<form action="index.php"  method="post">';
         for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual < 4; $indiceAlternativaAtual++) {
-            echo '<input type="radio" name="radioResposta">';
+            echo '<input type="radio" name="radioResposta" value=',$indiceAlternativaAtual,'>';
             echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
             echo "<br>";
         }
         echo '<input type="submit" value="Enviar"  name="botaoRadioResposta">';
+
         echo '<input type="hidden" value=',$id + 1,' name="id">';
+
 
         echo "</form>";
     };
