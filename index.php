@@ -27,13 +27,14 @@ $id = $_POST["id"];
     function GeraButoesDasAlternativas($vetorDasAlternativas, $id)
     {
 
-        echo '<form action="index.php?id=', $id + 1, '"  method="post">';
+        echo '<form action="index.php"  method="post">';
         for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual < 4; $indiceAlternativaAtual++) {
             echo '<input type="radio" name="radioResposta">';
             echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
             echo "<br>";
         }
         echo '<input type="submit" value="Enviar"  name="botaoRadioResposta">';
+        echo '<input type="hidden" value=',$id + 1,' name="id">';
 
         echo "</form>";
     };
