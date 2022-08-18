@@ -1,3 +1,27 @@
+<?php 
+$logout = $_POST["logout"];
+session_start();
+if ($logout == 1){
+    
+    session_destroy();
+    echo '<h1 class="text-white">Deslogado!</h1>';
+
+}
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

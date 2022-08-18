@@ -6,6 +6,9 @@ $id = $_POST["id"];
 
 if($id == 0){
     $login = $_POST["login"];
+    if ($login == ""){
+        header("Location: paginaInicial.php");
+    }
     setcookie("login", $login);
     $date = date('Y-m-d H:i:s');
     setcookie("date", $date);
@@ -37,7 +40,7 @@ function TestaSeAcertou(){
     global $vetorAlternativasCorretas;
     $idMenosUm = $id-1;
     if($alternativaClicada == $vetorAlternativasCorretas[$idMenosUm]){
-        echo ($alternativaClicada);
+        
     }
     else{
         header("Location: faliu.html");
@@ -63,7 +66,10 @@ if (!($alternativaClicada == -1)){ //Testa se é a primeira página
 </head>
 
 <body>
+    <form action="paginaInicial.php" method="post">
+    <button class="btn btn-info  position-absolute top-0 end-0 botaoLogout col-4" name="logout" value="1">Logout</button>
 
+    </form>
 
 
 
@@ -115,5 +121,4 @@ if (!($alternativaClicada == -1)){ //Testa se é a primeira página
 
 
 </body>
-
 </html>
