@@ -4,11 +4,22 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $id = $_POST["id"];
 
+session_start();
+
+
+
 if($id == 0){
     $login = $_POST["login"];
+    if (!isset($_SESSION['loginSession'])) {
+        $_SESSION['loginSession'] = $login;
+      } else {
+        session_destroy();
+      }
+
     if ($login == ""){
         header("Location: paginaInicial.php");
     }
+
     setcookie("login", $login);
     $date = date('Y-m-d H:i:s');
     setcookie("date", $date);
@@ -24,7 +35,9 @@ if($id != 0){
 
 
 echo 'Login: '. $login ."<br>";
-echo 'Última Vez Jogada:   '. $date ."\n";
+echo 'Última Vez Jogada:   '. $date ."<br>";
+echo 'Login Da Session: '. $_SESSION['loginSession'] ."<br>";
+
 
 if ($id == 5){
     header("Location: ganhou.html");
@@ -39,6 +52,7 @@ function TestaSeAcertou(){
     global $alternativaClicada;
     global $vetorAlternativasCorretas;
     $idMenosUm = $id-1;
+    
     if($alternativaClicada == $vetorAlternativasCorretas[$idMenosUm]){
         
     }
@@ -86,7 +100,7 @@ if (!($alternativaClicada == -1)){ //Testa se é a primeira página
             echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
             echo "<br>";
         }
-        echo '<input type="submit" value="Enviar"  name="botaoRadioResposta">';
+        echo '<input type="submit" class="btn btn-primary" value="Enviar"  name="botaoRadioResposta">';
 
         echo '<input type="hidden" value=',$id + 1,' name="id">';
 

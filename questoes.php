@@ -4,10 +4,10 @@
 $vetorEnunciados =
     [
         '<h1>Qual bicho transmite Doença de Chagas ?</h1>',
-        "Qual fruto é conhecido no Norte e Nordeste como jerimum?",
-        "Qual é o coletivo de cães?",
-        "Qual é o triângulo que tem todos os lados diferentes?",
-        "O adjetivo venoso está relacionado a:"
+        "<h1>Qual fruto é conhecido no Norte e Nordeste como jerimum?</h1>",
+        "<h1>Qual é o coletivo de cães?</h1>",
+        "<h1>Qual é o triângulo que tem todos os lados diferentes?</h1>",
+        "<h1>O adjetivo venoso está relacionado a:</h1>"
     ];
 $vetorAlternativas = array(
 
