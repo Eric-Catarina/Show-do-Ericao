@@ -1,5 +1,13 @@
 <?php 
-   if (isset($_POST['logout'])) {
+   
+ 
+ 
+ 
+ 
+ 
+
+/*
+ if (isset($_POST['logout'])) {
     $logout = $_POST['logout'];
    }
 session_start();
@@ -11,8 +19,7 @@ if (isset($_POST['logout'])){
     
     }
 }
-
-
+*/
 
 
 
@@ -45,11 +52,15 @@ if (isset($_POST['logout'])){
     <div class="tudo">
         <div class="containerCentral col-5 position-absolute top-50 start-50 translate-middle">
             <div class="input-group mb-3 text-center">
-                <form action="index.php" method="post" class="col-12">
+                <form action="tests.php" method="post" class="col-12">
 
                     <input type="text" class="form-control col-10 text-center mb-2" placeholder="Nome" aria-label="Nome"
                         aria-describedby="button-addon2" name="login">
-                    <input type="submit" value="Login" name="Enviar" class="btn btn-primary mx-auto col-12">
+                        <input type="password" class="form-control col-10 text-center mb-2" placeholder="Senha" aria-label="Senha"
+                        aria-describedby="button-addon2" name="senha">
+                    <input type="submit" value="Login" name="Nome" class="btn btn-primary mx-auto col-12 mt-3">
+                    <input type="submit" value="Cadastrar" name="Senha" class="btn btn-primary mx-auto col-12 mt-2">
+
                     
                     <input type="hidden" value="0" name="id">
                     <input type="hidden" value='-1' name="radioResposta">';
