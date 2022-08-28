@@ -6,15 +6,12 @@
     $loginUsuario = $_POST["login"];
     $senhaUsuario = $_POST["senha"];
 
-    $inp = file_get_contents('arquivoUsuarios.json');
-    
-    $tempArray = json_decode($inp, true);
+    $arquivoUsuariosString = file_get_contents('arquivoUsuarios.json');
 
-    $tempArray[] = ['batata' => 'maca'];
+    $arquivoUsuariosArray = json_decode($arquivoUsuariosString, true);
+
+    $arquivoUsuariosArray[] = [$loginUsuario => $senhaUsuario];
    
-    $tempArray = json_encode($tempArray);
+    $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
 
-    echo ($tempArray);
-    echo (gettype($tempArray));
-
-    file_put_contents('arquivoUsuarios.json', $tempArray);
+    file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
