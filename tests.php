@@ -1,30 +1,20 @@
 <?php 
-
+    //json_decode Converte String Para Array
+    //json_encode Converte Array Para String
 
 
     $loginUsuario = $_POST["login"];
     $senhaUsuario = $_POST["senha"];
-    $arquivoUsuarios = fopen("./usuarios.json", "r+");
 
-    $conteudoArquivoUsuarios = fread($arquivoUsuarios, "1000");
+    $inp = file_get_contents('arquivoUsuarios.json');
+    
+    $tempArray = json_decode($inp, true);
 
-    echo($conteudoArquivoUsuarios);
-    echo "<br>";
+    $tempArray[] = ['batata' => 'maca'];
+   
+    $tempArray = json_encode($tempArray);
 
-function AdicionaLoginSenhaAoArquivoUsuarios(){
+    echo ($tempArray);
+    echo (gettype($tempArray));
 
-    global $arquivoUsuarios;
-    global $loginUsuario;
-    global $senhaUsuario;
-    global $conteudoArquivoUsuarios;
-
-    $conteudoArquivoUsuariosArray = explode("}", $conteudoArquivoUsuarios);
-
-    $conteudoArquivoUsuariosArray[] = ['loginUsuario' => $loginUsuario, 'senhaUsuario' => $senhaUsuario];
-    fwrite($arquivoUsuarios, json_encode($conteudoArquivoUsuariosArray));
-}
-AdicionaLoginSenhaAoArquivoUsuarios();
-
-
-fclose($arquivoUsuarios);
-?>
+    file_put_contents('arquivoUsuarios.json', $tempArray);
