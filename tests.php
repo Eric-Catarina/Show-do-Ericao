@@ -2,7 +2,6 @@
     //json_decode Converte String Para Array
     //json_encode Converte Array Para String
 
-
     $loginUsuario = $_POST["login"];
     $senhaUsuario = $_POST["senha"];
 
@@ -10,7 +9,7 @@
 
     $arquivoUsuariosArray = json_decode($arquivoUsuariosString, true);
 
-    $arquivoUsuariosArray[] = [$loginUsuario => $senhaUsuario];
+    $arquivoUsuariosArray[] = ["loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
    
     $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
 
