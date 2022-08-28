@@ -36,7 +36,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
         }
         if (!$usuarioJaCadastrado) {
             //Cadastra Usuário
-            array_push($arquivoUsuariosArray, ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario]);
+            $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
             $arquivoUsuariosString = json_encode($arquivoUsuariosArray);
             file_put_contents('arquivoUsuarios.json', $arquivoUsuariosString);
             //Cadastra Usuário
@@ -48,7 +48,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     } else {  //Se o arquivo está vazio : 
 
         //Cadastra Usuário
-        array_push($arquivoUsuariosArray, ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario]);
+        $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
         $arquivoUsuariosString = json_encode($arquivoUsuariosArray);
         file_put_contents('arquivoUsuarios.json', $arquivoUsuariosString);
         //Cadastra Usuário
