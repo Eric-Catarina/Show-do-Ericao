@@ -28,17 +28,27 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     if (!empty($arquivoUsuariosArray)) {
         foreach ($arquivoUsuariosArray as $objetoAtual) {
             if ($nomeUsuario == $objetoAtual['nomeUsuario']) {
+                $jogarOuVoltar = "Jogar";
+                $cadastradoOuLogado = "Bem vindo de volta ". $nomeUsuario . " !" ;
+                $destinoBotao = "index.php";
+
+
             } else {
                 //Cadastra Usuário
                 $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
                 $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
                 file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
                 //Cadastra Usuário
+
+                $cadastradoOuLogado = "Cadastro realizado com Sucesso !";
+                $jogarOuVoltar = "Voltar";
+                $destinoBotao = "paginaInicial.php";
+
             }
         }
     } else {
         //Cadastra Usuário
-        $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" . "\n" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
+        $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
         $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
         file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
         //Cadastra Usuário
@@ -82,15 +92,15 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     <div class="backgroundTests">
 
         <div class="position-absolute top-50 start-50 translate-middle">
-            <form action="index.php" method="post" class="col-12">
+            <form action="<?php echo($destinoBotao); ?>" method="post" class="col-12">
 
 
-                <p class="fs-1 text-white">Bem-vindo de volta <?php echo ($nomeUsuario) ?> !</p>
-                <input type="submit" value="Jogar !" name="Nome" class="btn btn-primary mx-auto col-12 mt-2  btn btn-info fs-1 text-dark fw-semibold">
+                <p class="fs-1 text-white"> <?php echo $cadastradoOuLogado; ?></p>
+                <input type="submit" value="<?php echo($jogarOuVoltar); ?>" name="Nome" class="btn btn-primary mx-auto col-12 mt-2  btn btn-info fs-1 text-dark fw-semibold">
 
 
                 <input type="hidden" value="0" name="id">
-                <input type="hidden" value='-1' name="radioResposta">';
+                <input type="hidden" value='-1' name="radioResposta">
             </form>
 
         </div>
