@@ -1,38 +1,3 @@
-<?php
-
-
-
-
-
-
-
-/*
- if (isset($_POST['logout'])) {
-    $logout = $_POST['logout'];
-   }
-session_start();
-
-if (isset($_POST['logout'])){
-    if ($logout == 1){
-        session_destroy();
-        echo '<h1 class="text-white position-absolute ">Deslogado!</h1>';
-    
-    }
-}
-*/
-
-
-
-
-
-
-
-
-
-?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +31,7 @@ if (isset($_POST['logout'])){
 
 
                     <input type="hidden" value="0" name="id">
-                    <input type="hidden" value='-1' name="radioResposta">';
+                    <input type="hidden" value='-1' name="radioResposta">
 
                 </form>
             </div>
