@@ -31,11 +31,6 @@ if($id != 0){
     $date = $_COOKIE['date'];
 }
 
-$arquivoUsuarios = fopen("./usuarios.json", "a");
-fwrite($arquivoUsuarios, "[{.$login -- $date.}],");
-fclose($arquivoUsuarios);
-
-
 
 
 echo 'Login: '. $login ."<br>";

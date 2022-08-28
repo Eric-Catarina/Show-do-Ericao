@@ -1,10 +1,10 @@
-<?php 
-   
- 
- 
- 
- 
- 
+<?php
+
+
+
+
+
+
 
 /*
  if (isset($_POST['logout'])) {
@@ -41,8 +41,7 @@ if (isset($_POST['logout'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
 
     <title>Document</title>
@@ -54,14 +53,18 @@ if (isset($_POST['logout'])){
             <div class="input-group mb-3 text-center">
                 <form action="tests.php" method="post" class="col-12">
 
-                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="Nome" aria-label="Nome"
-                        aria-describedby="button-addon2" name="login">
-                        <input type="password" class="form-control col-10 text-center mb-2" placeholder="Senha" aria-label="Senha"
-                        aria-describedby="button-addon2" name="senha">
+                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="Nome" aria-label="Nome" aria-describedby="button-addon2" name="nome">
+
+                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="E-mail" aria-label="E-mail" aria-describedby="button-addon2" name="email">
+
+                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="Login" aria-label="Login" aria-describedby="button-addon2" name="login">
+
+                    <input type="password" class="form-control col-10 text-center mb-2" placeholder="Senha" aria-label="Senha" aria-describedby="button-addon2" name="senha">
+
                     <input type="submit" value="Login" name="Nome" class="btn btn-primary mx-auto col-12 mt-3">
                     <input type="submit" value="Cadastrar" name="Senha" class="btn btn-primary mx-auto col-12 mt-2">
 
-                    
+
                     <input type="hidden" value="0" name="id">
                     <input type="hidden" value='-1' name="radioResposta">';
 
