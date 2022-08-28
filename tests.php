@@ -6,9 +6,9 @@ $nomeDoArquivoUsuarios = 'arquivoUsuarios.json';
 
 $arquivoUsuariosString = file_get_contents('arquivoUsuarios.json');
 
-$arquivoUsuariosArray = json_decode($arquivoUsuariosString, true);
+$arquivoUsuariosArray = json_decode($arquivoUsuariosString, TRUE);
 
-
+$usuarioJaCadastrado = false;
 
 if (!(file_exists($nomeDoArquivoUsuarios))) {
     file_put_contents($nomeDoArquivoUsuarios, "");
@@ -25,29 +25,32 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
         die();
     }
 
-    if (!empty($arquivoUsuariosArray)) {
+    if (!empty($arquivoUsuariosArray)) { //Se o arquivo não está vazio :
         foreach ($arquivoUsuariosArray as $objetoAtual) {
-            if ($nomeUsuario == $objetoAtual['nomeUsuario']) {
+            if ($nomeUsuario == $objetoAtual['nomeUsuario']) { //Se o nome já está cadastrado no arquivo :
                 $jogarOuVoltar = "Jogar";
                 $cadastradoOuLogado = "Bem vindo de volta " . $nomeUsuario . " !";
                 $destinoBotao = "index.php";
-            } else {
-                //Cadastra Usuário
-                $arquivoUsuariosArray[] = ["nomeUsuario" => "$nomeUsuario", "emailUsuario" => "$emailUsuario", "loginUsuario" => "$loginUsuario", "senhaUsuario" => "$senhaUsuario"];
-                $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
-                file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
-                //Cadastra Usuário
-
-                $cadastradoOuLogado = "Cadastro realizado com Sucesso !";
-                $jogarOuVoltar = "Voltar";
-                $destinoBotao = "paginaInicial.php";
+                $usuarioJaCadastrado = true;
             }
         }
-    } else {
+        if (!$usuarioJaCadastrado) {
+            //Cadastra Usuário
+            array_push($arquivoUsuariosArray, ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario]);
+            $arquivoUsuariosString = json_encode($arquivoUsuariosArray);
+            file_put_contents('arquivoUsuarios.json', $arquivoUsuariosString);
+            //Cadastra Usuário
+
+            $cadastradoOuLogado = "Cadastro realizado com Sucesso !";
+            $jogarOuVoltar = "Voltar";
+            $destinoBotao = "paginaInicial.php";
+        }
+    } else {  //Se o arquivo está vazio : 
+
         //Cadastra Usuário
-        $arquivoUsuariosArray[] = ["nomeUsuario" => "$nomeUsuario", "emailUsuario" => "$emailUsuario", "loginUsuario" => "$loginUsuario", "senhaUsuario" => "$senhaUsuario"];
-        $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
-        file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
+        array_push($arquivoUsuariosArray, ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario]);
+        $arquivoUsuariosString = json_encode($arquivoUsuariosArray);
+        file_put_contents('arquivoUsuarios.json', $arquivoUsuariosString);
         //Cadastra Usuário
 
         $cadastradoOuLogado = "Cadastro realizado com Sucesso !";
@@ -56,7 +59,6 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     }
 }
 
-//Adicionar um botao submit nessa página com o Login da pessoa acima dela. O botão envia para o Index.php
 
 
 
