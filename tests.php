@@ -25,32 +25,27 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
         die();
     }
 
-    if (!empty($arquivoUsuariosArray)){
+    if (!empty($arquivoUsuariosArray)) {
         foreach ($arquivoUsuariosArray as $objetoAtual) {
             if ($nomeUsuario == $objetoAtual['nomeUsuario']) {
-                var_dump($nomeUsuario);
             } else {
                 //Cadastra Usuário
-                $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" . "\n" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
+                $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
                 $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
                 file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
                 //Cadastra Usuário
             }
         }
-    }
-    else{
+    } else {
         //Cadastra Usuário
         $arquivoUsuariosArray[] = ["nomeUsuario" => $nomeUsuario, "emailUsuario" . "\n" => $emailUsuario, "loginUsuario" => $loginUsuario, "senhaUsuario" => $senhaUsuario];
         $arquivoUsuariosArray = json_encode($arquivoUsuariosArray);
         file_put_contents('arquivoUsuarios.json', $arquivoUsuariosArray);
         //Cadastra Usuário
     }
-
-    
-   
 }
 
-
+//Adicionar um botao submit nessa página com o Login da pessoa acima dela. O botão envia para o Index.php
 
 
 
@@ -85,14 +80,27 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
 <body>
 
     <div class="backgroundTests">
-        <form action="paginaInicial.php" method="post" class="col-12">
 
-            <button type="submit" class=" position-absolute top-50 start-50 translate-middle btn btn-info">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <form action="index.php" method="post" class="col-12">
 
-        </form>
+
+                <p class="fs-1 text-white">Bem-vindo de volta <?php echo ($nomeUsuario) ?> !</p>
+                <input type="submit" value="Jogar !" name="Nome" class="btn btn-primary mx-auto col-12 mt-2  btn btn-info fs-1 text-dark fw-semibold">
+
+
+                <input type="hidden" value="0" name="id">
+                <input type="hidden" value='-1' name="radioResposta">';
+            </form>
+
+        </div>
+
+
+
 
 
     </div>
+
 
 
 </body>

@@ -4,43 +4,15 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $id = $_POST["id"];
 
-session_start();
-
-
-
 if($id == 0){
-    $login = $_POST["login"];
-    if (!isset($_SESSION['loginSession'])) {
-        $_SESSION['loginSession'] = $login;
-      } else {
-        session_destroy();
-      }
-
-    if ($login == ""){
-        header("Location: paginaInicial.php");
-    }
-
-    setcookie("login", $login);
+    
     $date = date('Y-m-d H:i:s');
     setcookie("date", $date);
 
-
 }
-if($id != 0){
-    $login = $_COOKIE['login'];
-    $date = $_COOKIE['date'];
-}
-
-
-
-echo 'Login: '. $login ."<br>";
-echo 'Última Vez Jogada:   '. $date ."<br>";
-echo 'Login Da Session: '. $_SESSION['loginSession'] ."<br>";
-
 
 if ($id == 5){
     header("Location: ganhou.html");
-
 }
 
 echo "<h3> ID:"  .$id. "</h3>"; 
