@@ -1,4 +1,5 @@
 <?php
+
 //json_decode Converte String Para Array
 //json_encode Converte Array Para String
 
@@ -28,7 +29,7 @@ if (!(file_exists($nomeDoArquivoUsuarios))) {
     file_put_contents($nomeDoArquivoUsuarios, "");
 }
 
-if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) && isset($_POST['email'])) {
+if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) && isset($_POST['email'])) { //Testa se foram recebidos todos os dados
     $nomeUsuario =  $_POST["nome"];
     $emailUsuario = $_POST["email"];
     $loginUsuario = $_POST["login"];
@@ -36,7 +37,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
 
     $usuarioAtual = new Usuario($nomeUsuario, $emailUsuario, $loginUsuario, $senhaUsuario); //Instancia a classe Usuario com o Usuario atual
 
-    if (empty($loginUsuario) || empty($senhaUsuario) || empty($nomeUsuario) || empty($emailUsuario)) {
+    if (empty($loginUsuario) || empty($senhaUsuario) || empty($nomeUsuario) || empty($emailUsuario)) { // Se algum dos campos da autenticação está vazio, reseta a página
         header("Location: paginaInicial.php");
         die();
     }
@@ -44,13 +45,13 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     if (!empty($arquivoUsuariosArray)) { //Se o arquivo não está vazio :
         foreach ($arquivoUsuariosArray as $objetoAtual) { // Percorre todo o arquivo Usuarios
             if ($nomeUsuario == $objetoAtual['nomeUsuario']) { //Se o nome já está cadastrado no arquivo :
-                if ($usuarioAtual->senha == $objetoAtual['senhaUsuario']){
+                if ($usuarioAtual->senha == $objetoAtual['senhaUsuario']){ // Se a senha está correta?
                     $jogarOuVoltar = "Jogar";
                     $cadastradoOuLogado = "Bem vindo de volta " . $nomeUsuario . " !";
                     $destinoBotao = "index.php";
                     $usuarioJaCadastrado = true;
                 }
-                else{
+                else{ // Se a senha está incorreta
                     $jogarOuVoltar = "Voltar";
                     $cadastradoOuLogado = "Senha Incorreta !";
                     $destinoBotao = "paginaInicial.php";
