@@ -16,7 +16,7 @@
     <div class="tudo">
         <div class="containerCentral col-5 position-absolute top-50 start-50 translate-middle">
             <div class="input-group mb-3 text-center">
-                <form action="tests.php" method="post" class="col-12">
+                <form action="autenticacao.php" method="post" class="col-12">
 
                     <input type="text" class="form-control col-10 text-center mb-4 inputs" placeholder="Nome" aria-label="Nome" aria-describedby="button-addon2" name="nome">
 

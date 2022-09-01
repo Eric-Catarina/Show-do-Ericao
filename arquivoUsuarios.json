@@ -1,14 +1,1 @@
-[
-    {
-        "nomeUsuario": "Eric",
-        "emailUsuario": "1123asdadd",
-        "loginUsuario": "12asdads",
-        "senhaUsuario": "123"
-    },
-    {
-        "nomeUsuario": "Eric",
-        "emailUsuario": "qasads",
-        "loginUsuario": "addas",
-        "senhaUsuario": "12"
-    }
-]
+[{"nomeUsuario":"Eric","emailUsuario":"1123asdadd","loginUsuario":"12asdads","senhaUsuario":"123"},{"nomeUsuario":"Eric","emailUsuario":"qasads","loginUsuario":"addas","senhaUsuario":"12"},{"nomeUsuario":"batata","emailUsuario":"asas","loginUsuario":"asas","senhaUsuario":"1234"}]
