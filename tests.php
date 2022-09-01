@@ -10,6 +10,20 @@ $arquivoUsuariosArray = json_decode($arquivoUsuariosString, TRUE);
 
 $usuarioJaCadastrado = false;
 
+class Usuario{
+    var $nome;
+    var $email;
+    var $login;
+    var $senha;
+    function __construct($nome, $email, $login, $senha)
+    {
+        $this->nome  = $nome;
+        $this->email = $email;
+        $this->login = $login;
+        $this->senha = $senha;
+    }
+}
+
 if (!(file_exists($nomeDoArquivoUsuarios))) {
     file_put_contents($nomeDoArquivoUsuarios, "");
 }
@@ -19,6 +33,9 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     $emailUsuario = $_POST["email"];
     $loginUsuario = $_POST["login"];
     $senhaUsuario = $_POST["senha"];
+
+    $usuarioAtual = new Usuario($nomeUsuario, $emailUsuario, $loginUsuario, $senhaUsuario);
+    echo($usuarioAtual->nome);
 
     if (empty($loginUsuario) || empty($senhaUsuario) || empty($nomeUsuario) || empty($emailUsuario)) {
         header("Location: paginaInicial.php");
