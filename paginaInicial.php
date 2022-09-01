@@ -18,16 +18,15 @@
             <div class="input-group mb-3 text-center">
                 <form action="tests.php" method="post" class="col-12">
 
-                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="Nome" aria-label="Nome" aria-describedby="button-addon2" name="nome">
+                    <input type="text" class="form-control col-10 text-center mb-4 inputs" placeholder="Nome" aria-label="Nome" aria-describedby="button-addon2" name="nome">
 
-                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="E-mail" aria-label="E-mail" aria-describedby="button-addon2" name="email">
+                    <input type="text" class="form-control col-10 text-center mb-4 inputs" placeholder="E-mail" aria-label="E-mail" aria-describedby="button-addon2" name="email">
 
-                    <input type="text" class="form-control col-10 text-center mb-2" placeholder="Login" aria-label="Login" aria-describedby="button-addon2" name="login">
+                    <input type="text" class="form-control col-10 text-center mb-4 inputs" placeholder="Login" aria-label="Login" aria-describedby="button-addon2" name="login">
 
-                    <input type="password" class="form-control col-10 text-center mb-2" placeholder="Senha" aria-label="Senha" aria-describedby="button-addon2" name="senha">
+                    <input type="password" class="form-control col-10 text-center mb-4 inputs" placeholder="Senha" aria-label="Senha" aria-describedby="button-addon2" name="senha">
 
-                    <input type="submit" value="Login" name="Nome" class="btn btn-primary mx-auto col-12 mt-3">
-                    <input type="submit" value="Cadastrar" name="Senha" class="btn btn-primary mx-auto col-12 mt-2">
+                    <input type="submit" value="Login" name="Nome" class="botaoLogin btn btn-primary mx-auto col-12 mt-5">
 
 
                     <input type="hidden" value="0" name="id">

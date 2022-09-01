@@ -61,18 +61,10 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
 
 
 
+//Adicionar Sistema de Conferir Senha
+
 
 ?>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -99,7 +91,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
 
 
                 <p class="fs-1 text-white"> <?php echo ($cadastradoOuLogado); ?></p>
-                <input type="submit" value="<?php echo ($jogarOuVoltar); ?>" name="Nome" class="btn btn-primary mx-auto col-12 mt-2  btn btn-info fs-1 text-dark fw-semibold">
+                <input type="submit" value="<?php echo ($jogarOuVoltar); ?>" name="Nome" class="botaoVoltarAut btn btn-primary mx-auto col-12 mt-2  btn btn-info fs-1 text-dark fw-semibold">
 
 
                 <input type="hidden" value="0" name="id">

@@ -62,3 +62,39 @@ background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-
 background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 height: 100vh;
 }
+
+.botaoLogin{
+    height: 60px;
+    border-radius: 50px;
+    box-shadow:  17px 17px 34px #090719,
+                 -17px -17px 34px #151139;
+}
+
+.inputs{
+    box-shadow:  9px 9px 18px #060510,
+                 -9px -9px 18px #181342;
+}
+.botaoVoltarAut{
+    border-radius: 50px;
+box-shadow:  11px 11px 22px #16181b,
+             -11px -11px 22px #39496e;
+}
+
+.backgroundIndex{
+    background: #1e3c72;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+height: 100vh;
+}
+
+.cardCentral{
+    background: transparent; /* fallback for old browsers */
+    border: 0;
+
+    border-radius: 50px;
+background: linear-gradient(145deg, #20407a, #1b3667);
+box-shadow:  11px 11px 22px #15294f,
+             -11px -11px 22px #274f95;
+             color: whitesmoke;
+}
