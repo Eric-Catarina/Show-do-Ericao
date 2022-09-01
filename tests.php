@@ -34,8 +34,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     $loginUsuario = $_POST["login"];
     $senhaUsuario = $_POST["senha"];
 
-    $usuarioAtual = new Usuario($nomeUsuario, $emailUsuario, $loginUsuario, $senhaUsuario);
-    echo($usuarioAtual->nome);
+    $usuarioAtual = new Usuario($nomeUsuario, $emailUsuario, $loginUsuario, $senhaUsuario); //Instancia a classe Usuario com o Usuario atual
 
     if (empty($loginUsuario) || empty($senhaUsuario) || empty($nomeUsuario) || empty($emailUsuario)) {
         header("Location: paginaInicial.php");
@@ -43,12 +42,20 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     }
 
     if (!empty($arquivoUsuariosArray)) { //Se o arquivo não está vazio :
-        foreach ($arquivoUsuariosArray as $objetoAtual) {
+        foreach ($arquivoUsuariosArray as $objetoAtual) { // Percorre todo o arquivo Usuarios
             if ($nomeUsuario == $objetoAtual['nomeUsuario']) { //Se o nome já está cadastrado no arquivo :
-                $jogarOuVoltar = "Jogar";
-                $cadastradoOuLogado = "Bem vindo de volta " . $nomeUsuario . " !";
-                $destinoBotao = "index.php";
-                $usuarioJaCadastrado = true;
+                if ($usuarioAtual->senha == $objetoAtual['senhaUsuario']){
+                    $jogarOuVoltar = "Jogar";
+                    $cadastradoOuLogado = "Bem vindo de volta " . $nomeUsuario . " !";
+                    $destinoBotao = "index.php";
+                    $usuarioJaCadastrado = true;
+                }
+                else{
+                    $jogarOuVoltar = "Voltar";
+                    $cadastradoOuLogado = "Senha Incorreta !";
+                    $destinoBotao = "paginaInicial.php";
+                    $usuarioJaCadastrado = true;
+                }
             }
         }
         if (!$usuarioJaCadastrado) {

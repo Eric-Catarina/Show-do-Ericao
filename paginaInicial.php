@@ -26,7 +26,7 @@
 
                     <input type="password" class="form-control col-10 text-center mb-4 inputs" placeholder="Senha" aria-label="Senha" aria-describedby="button-addon2" name="senha">
 
-                    <input type="submit" value="Login" name="Nome" class="botaoLogin btn btn-primary mx-auto col-12 mt-5">
+                    <input type="submit" value="Login" name="Nome" class="botaoLogin btn btn-primary mx-auto col-12 mt-5 fs-3 fw-bold">
 
 
                     <input type="hidden" value="0" name="id">
