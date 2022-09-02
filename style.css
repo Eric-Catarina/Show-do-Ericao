@@ -129,7 +129,7 @@
     background: transparent;
     /* fallback for old browsers */
     border: 0;
-    width: 800px;
+    width: 1200px;
 
     border-radius: 50px;
     background: transparent;
@@ -146,9 +146,7 @@ box-shadow:  16px 16px 32px #101f3a,
              -7px -7px 14px #264988;
 }
 
-.alternativas{
-    
-}
+
 
 
 

@@ -63,7 +63,7 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
                 function GeraButoesDasAlternativas($vetorDasAlternativas, $id)
                 {
 
-                    echo '<form action="index.php"  method="post">';
+                    echo '<form action="index.php" class="d-flex flex-column justify-content-start align-items-center"  method="post">';
                     for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual < 4; $indiceAlternativaAtual++) {
 
 
@@ -116,7 +116,7 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
 
                 ?>
 
-                <div class="alternativas">
+                <div class="text-center align-items-center justify-content-between">
                     <?php
 
                     GeraButoesDasAlternativas($vetorAlternativas, $id);
