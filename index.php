@@ -50,7 +50,7 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
 <body>
     <div class="backgroundIndex">
         <div class="divCentral position-absolute top-50 start-50 translate-middle card cardCentral">
-            <div class="cardCentral card-body text-light-75">
+            <div class="cardCentral card-body text-light-75 text-center">
 
                 <form action="paginaInicial.php" method="post">
                     <button class="btn btn-info botaoLogout col-4" name="logout" value="1">Logout</button>
@@ -59,26 +59,43 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
 
 
 
-
                 <?php
-
-
                 function GeraButoesDasAlternativas($vetorDasAlternativas, $id)
                 {
 
                     echo '<form action="index.php"  method="post">';
                     for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual < 4; $indiceAlternativaAtual++) {
-                        echo '<input type="radio" name="radioResposta" value=', $indiceAlternativaAtual, '>';
+
+
+
+
+                        echo '<input type="radio" id=' . $indiceAlternativaAtual . ' name="radioResposta" value=', $indiceAlternativaAtual, '>';
+                        echo '<label class="align-items-center" for=' . $indiceAlternativaAtual . '>';
                         echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
+                        echo '</label>';
+
+
+
+
+
                         echo "<br>";
                     }
-                    echo '<input type="submit" class="btn btn-primary" value="Enviar"  name="botaoRadioResposta">';
+                    echo '<input type="submit" class="btn btn-primary fs-3 col-4" value="Enviar"  name="botaoRadioResposta">';
 
                     echo '<input type="hidden" value=', $id + 1, ' name="id">';
 
 
                     echo "</form>";
                 };
+                ?>
+
+
+
+
+                <?php
+
+
+
                 function GeraTituloPergunta($id)
                 {
 
@@ -96,9 +113,19 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
 
                 GeraTituloPergunta($id);
                 GeraPerguntasRespondidas($id);
-                GeraButoesDasAlternativas($vetorAlternativas, $id);
 
                 ?>
+
+                <div class="alternativas">
+                    <?php
+
+                    GeraButoesDasAlternativas($vetorAlternativas, $id);
+
+                    ?>
+
+                </div>
+
+
 
 
                 <br>
