@@ -94,7 +94,9 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Show do Ericao</title>
+    <link rel="icon" type="image/x-icon" href="./images/fotoCara.png">
+
 </head>
 
 <body>
