@@ -5,7 +5,6 @@ date_default_timezone_set('America/Sao_Paulo');
 $id = $_POST["id"];
 
 if ($id == 0) {
-
     $date = date('Y-m-d H:i:s');
     setcookie("date", $date);
 }
@@ -57,27 +56,16 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
 
                 </form>
 
-
-
                 <?php
                 function GeraButoesDasAlternativas($vetorDasAlternativas, $id)
                 {
 
                     echo '<form action="index.php" class="d-flex flex-column justify-content-start align-items-center"  method="post">';
                     for ($indiceAlternativaAtual = 0; $indiceAlternativaAtual < 4; $indiceAlternativaAtual++) {
-
-
-
-
                         echo '<input type="radio" id=' . $indiceAlternativaAtual . ' name="radioResposta" value=', $indiceAlternativaAtual, '>';
                         echo '<label class="align-items-center" for=' . $indiceAlternativaAtual . '>';
                         echo ($vetorDasAlternativas[$id][$indiceAlternativaAtual]);
                         echo '</label>';
-
-
-
-
-
                         echo "<br>";
                     }
                     echo '<input type="submit" class="btn btn-primary fs-3 col-4" value="Enviar"  name="botaoRadioResposta">';
@@ -88,13 +76,7 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
                     echo "</form>";
                 };
                 ?>
-
-
-
-
                 <?php
-
-
 
                 function GeraTituloPergunta($id)
                 {
@@ -124,9 +106,6 @@ if (!($alternativaClicada == -1)) { //Testa se é a primeira página
                     ?>
 
                 </div>
-
-
-
 
                 <br>
 

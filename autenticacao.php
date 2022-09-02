@@ -83,17 +83,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
         $destinoBotao = "paginaInicial.php";
     }
 }
-
-
-
-//Adicionar Sistema de Conferir Senha
-
-
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -124,14 +114,7 @@ if (isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['nome']) &&
             </form>
 
         </div>
-
-
-
-
-
     </div>
-
-
 
 </body>
 
